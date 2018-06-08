@@ -10,11 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var humidity: Int = 0
-    var temp: Int = 0
-    var wind: Float = 0
-    var icon: String = ""
-
+    @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var windLabel: UILabel!
+    @IBOutlet weak var forecastLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
