@@ -16,16 +16,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var windLabel: UILabel!
     @IBOutlet weak var forecastLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
+    @IBOutlet weak var loadingView: UIView!
     
     
     var weatherManager: WeatherManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.loadingView.isHidden = false
         weatherManager = WeatherManager()
         weatherManager.downloadCurrentWeather {
             print("data downloaded")
             self.updateUI()
+            self.loadingView.isHidden = true
         }
     }
 
@@ -33,6 +36,8 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+
 
     func updateUI() {
         self.cityLabel.text = weatherManager.city

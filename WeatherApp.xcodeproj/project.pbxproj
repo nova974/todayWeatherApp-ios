@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E0E484720CC79550007A57D /* ViewOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E0E484620CC79550007A57D /* ViewOverlay.xib */; };
+		1E0E484920CC7A700007A57D /* ViewOverlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0E484820CC7A700007A57D /* ViewOverlayController.swift */; };
 		1E12821520CA7FF6005E18FC /* GothaProReg.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1E12821420CA7FF6005E18FC /* GothaProReg.otf */; };
 		1E1F18FF20C9C09A003D99C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1F18FE20C9C09A003D99C0 /* AppDelegate.swift */; };
 		1E1F190120C9C09A003D99C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1F190020C9C09A003D99C0 /* ViewController.swift */; };
@@ -40,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		1CF24223E0E01CF7627768AD /* Pods-WeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherApp/Pods-WeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
+		1E0E484620CC79550007A57D /* ViewOverlay.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewOverlay.xib; sourceTree = "<group>"; };
+		1E0E484820CC7A700007A57D /* ViewOverlayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOverlayController.swift; sourceTree = "<group>"; };
 		1E12821420CA7FF6005E18FC /* GothaProReg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothaProReg.otf; sourceTree = "<group>"; };
 		1E1F18FB20C9C09A003D99C0 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E1F18FE20C9C09A003D99C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +160,8 @@
 		1ECB282020CA71D700F869CF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1E0E484620CC79550007A57D /* ViewOverlay.xib */,
+				1E0E484820CC7A700007A57D /* ViewOverlayController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -308,6 +314,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E0E484720CC79550007A57D /* ViewOverlay.xib in Resources */,
 				1E12821520CA7FF6005E18FC /* GothaProReg.otf in Resources */,
 				1E1F190920C9C09C003D99C0 /* LaunchScreen.storyboard in Resources */,
 				1E1F190620C9C09C003D99C0 /* Assets.xcassets in Resources */,
@@ -377,6 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E0E484920CC7A700007A57D /* ViewOverlayController.swift in Sources */,
 				1ECB282320CA720100F869CF /* WeatherManager.swift in Sources */,
 				1EF0DAF220CC66AD0068A34B /* Config.swift in Sources */,
 				1E1F190120C9C09A003D99C0 /* ViewController.swift in Sources */,

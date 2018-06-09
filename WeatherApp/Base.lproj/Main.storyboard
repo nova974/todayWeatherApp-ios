@@ -48,13 +48,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehR-lw-WDl">
-                                <rect key="frame" x="36.5" y="452" width="54.5" height="18"/>
+                                <rect key="frame" x="36.5" y="451.5" width="54.5" height="18"/>
                                 <fontDescription key="fontDescription" name="GothamPro" family="Gotham Pro" pointSize="20"/>
                                 <color key="textColor" red="0.24313725489999999" green="0.29411764709999999" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Del-Rz-3Ce">
-                                <rect key="frame" x="162" y="452" width="54.5" height="18"/>
+                                <rect key="frame" x="162.5" y="451.5" width="54.5" height="18"/>
                                 <fontDescription key="fontDescription" name="GothamPro" family="Gotham Pro" pointSize="20"/>
                                 <color key="textColor" red="0.24313725489999999" green="0.29411764709999999" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -83,17 +83,21 @@
                                 <rect key="frame" x="289" y="374" width="50" height="50"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jws-vI-Uiu">
-                                <rect key="frame" x="278.5" y="432" width="72.5" height="14.5"/>
+                                <rect key="frame" x="278" y="432" width="72.5" height="14.5"/>
                                 <fontDescription key="fontDescription" name="GothamPro" family="Gotham Pro" pointSize="16"/>
                                 <color key="textColor" red="0.64313725489999995" green="0.64313725489999995" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaY-0H-ACH">
-                                <rect key="frame" x="287" y="452" width="54.5" height="18"/>
+                                <rect key="frame" x="287.5" y="451.5" width="54.5" height="18"/>
                                 <fontDescription key="fontDescription" name="GothamPro" family="Gotham Pro" pointSize="20"/>
                                 <color key="textColor" red="0.24313725490196078" green="0.29411764705882354" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5UN-g8-Ve0" customClass="ViewOverlayController" customModule="WeatherApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -101,7 +105,9 @@
                             <constraint firstItem="WOV-gB-fAV" firstAttribute="centerX" secondItem="l9Z-i2-EvJ" secondAttribute="centerX" id="5TF-rP-cwU"/>
                             <constraint firstItem="jws-vI-Uiu" firstAttribute="top" secondItem="MNb-ni-Xta" secondAttribute="bottom" constant="8" symbolic="YES" id="6Va-Wu-V4B"/>
                             <constraint firstItem="Del-Rz-3Ce" firstAttribute="centerX" secondItem="e5r-kE-eBO" secondAttribute="centerX" id="6os-nY-iL0"/>
+                            <constraint firstItem="5UN-g8-Ve0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BAh-ic-rL8"/>
                             <constraint firstItem="FWS-b3-C6y" firstAttribute="leading" secondItem="FGH-da-AhT" secondAttribute="leading" id="F5z-Dm-BR2"/>
+                            <constraint firstItem="5UN-g8-Ve0" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="H8i-kJ-96K"/>
                             <constraint firstItem="FWS-b3-C6y" firstAttribute="centerX" secondItem="FGH-da-AhT" secondAttribute="centerX" constant="-17.5" id="I8T-nF-fRz"/>
                             <constraint firstItem="MNb-ni-Xta" firstAttribute="top" secondItem="e5r-kE-eBO" secondAttribute="top" id="NVc-Ln-wWK"/>
                             <constraint firstItem="MNb-ni-Xta" firstAttribute="leading" secondItem="e5r-kE-eBO" secondAttribute="trailing" constant="75" id="PlO-9P-0hZ"/>
@@ -111,6 +117,7 @@
                             <constraint firstItem="MNb-ni-Xta" firstAttribute="centerX" secondItem="jws-vI-Uiu" secondAttribute="centerX" id="g8f-pI-mgj"/>
                             <constraint firstItem="ehR-lw-WDl" firstAttribute="centerX" secondItem="Pvt-wU-mSB" secondAttribute="centerX" id="gE2-Eb-t4a"/>
                             <constraint firstItem="MNb-ni-Xta" firstAttribute="bottom" secondItem="e5r-kE-eBO" secondAttribute="bottom" id="jGK-vA-QNu"/>
+                            <constraint firstItem="5UN-g8-Ve0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lYj-hg-DV3"/>
                             <constraint firstItem="FGH-da-AhT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mLs-RD-HLS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MNb-ni-Xta" secondAttribute="trailing" constant="36" id="nWT-oX-TQa"/>
                             <constraint firstItem="FWS-b3-C6y" firstAttribute="top" secondItem="FGH-da-AhT" secondAttribute="bottom" constant="9" id="oEQ-JD-Frz"/>
@@ -122,6 +129,7 @@
                             <constraint firstItem="WOV-gB-fAV" firstAttribute="top" secondItem="Pvt-wU-mSB" secondAttribute="bottom" constant="8" id="wm0-W9-umf"/>
                             <constraint firstItem="Del-Rz-3Ce" firstAttribute="top" secondItem="WuS-Rw-GEw" secondAttribute="bottom" constant="5.5" id="yJd-lv-tcs"/>
                             <constraint firstItem="aaY-0H-ACH" firstAttribute="centerX" secondItem="MNb-ni-Xta" secondAttribute="centerX" id="ybR-CA-NUP"/>
+                            <constraint firstItem="5UN-g8-Ve0" firstAttribute="centerX" secondItem="FGH-da-AhT" secondAttribute="centerX" id="zfy-hI-yRQ"/>
                             <constraint firstItem="e5r-kE-eBO" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="55.5" id="zkt-Ic-Txs"/>
                             <constraint firstItem="WuS-Rw-GEw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zoZ-u8-2Uu"/>
                         </constraints>
@@ -132,6 +140,7 @@
                         <outlet property="forecastLabel" destination="ehR-lw-WDl" id="Rap-JL-BKK"/>
                         <outlet property="humidityLabel" destination="aaY-0H-ACH" id="lcr-oX-YvN"/>
                         <outlet property="icon" destination="Pvt-wU-mSB" id="One-sW-CaS"/>
+                        <outlet property="loadingView" destination="5UN-g8-Ve0" id="bhU-dW-N75"/>
                         <outlet property="tempLabel" destination="FGH-da-AhT" id="cBm-u5-cnj"/>
                         <outlet property="windLabel" destination="Del-Rz-3Ce" id="aWL-nH-SOp"/>
                     </connections>
@@ -139,6 +148,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="44" y="33.733133433283363"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4SL-tQ-gM4">
+            <objects>
+                <viewController id="BkW-rm-5nK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lYP-33-aXp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="8Qm-wB-gbK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bkH-eC-axg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="825" y="34"/>
         </scene>
     </scenes>
     <resources>
