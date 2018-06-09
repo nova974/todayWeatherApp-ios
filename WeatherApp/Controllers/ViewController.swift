@@ -18,34 +18,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var humidityLabel: UILabel!
     
     
+    var weatherManager: WeatherManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        manager.delegate = self
-//        manager.desiredAccuracy = kCLLocationAccuracyBest
-//        manager.requestWhenInUseAuthorization()
-//        manager.startUpdatingLocation()
-//        
-//        Alamofire.request("http://api.openweathermap.org/data/2.5/weather?q=paris&appid=8863ddaed7e91e62ec5cab0b846e913d&units=metric").responseJSON { response in
-//            let resJson = JSON(response.result.value!)
-//            self.humidity = resJson["main"]["humidity"].int!
-//            self.temp = resJson["main"]["temp"].int!
-//            self.wind = resJson["wind"]["speed"].float!
-//            self.icon = resJson["weather"][0]["main"].string!.lowercased()
-//
-//            print(self.humidity)
-//            print(self.temp)
-//            print(self.wind)
-//            print(self.icon)
-//            print(resJson)
-//            if let json = response.result.value {
-//                print("JSON: \(json)") // serialized json response
-//            }
-//            
-//            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-//                print("Data: \(utf8Text)") // original server data as UTF8 string
-//            }
-//        }
+        weatherManager = WeatherManager()
+        weatherManager.downloadCurrentWeather {
+            print("data downloaded")
+            self.updateUI()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,6 +34,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func updateUI() {
+        self.cityLabel.text = weatherManager.city
+        self.tempLabel.text = "\(Int(weatherManager.currentTemp))°"
+        self.icon.image = UIImage(named: weatherManager.icon)
+        self.windLabel.text = "\(weatherManager.wind) km/h"
+        self.forecastLabel.text = weatherManager.forecast
+        self.humidityLabel.text = "\(weatherManager.humidity)%"
+    }
 
 }
 
