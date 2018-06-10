@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
 
+    // Outlets
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var icon: UIImageView!
@@ -19,25 +21,57 @@ class ViewController: UIViewController {
     @IBOutlet weak var loadingView: UIView!
     
     
+    // Constants
+    let locationManager = CLLocationManager()
+
+    // Variables
     var weatherManager: WeatherManager!
+    var currentLocation: CLLocation!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loadingView.isHidden = false
         weatherManager = WeatherManager()
-        weatherManager.downloadCurrentWeather {
-            print("data downloaded")
-            self.updateUI()
-            self.loadingView.isHidden = true
-        }
+
+        callDelegate()
+        setupLocation()
+        locationAuthCheck()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        locationAuthCheck()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    func locationAuthCheck() {
+        if (CLLocationManager.authorizationStatus() == .authorizedWhenInUse) {
+            currentLocation = locationManager.location
+            
+            Location.sharedInstance.latitude = currentLocation.coordinate.latitude
+            Location.sharedInstance.longitude = currentLocation.coordinate.longitude
 
+            weatherManager.downloadCurrentWeather {
+                self.updateUI()
+                //            self.loadingView.isHidden = true
+            }
+        } else {
+            locationManager.requestWhenInUseAuthorization()
+            locationAuthCheck()
+        }
+    }
+    
+    func setupLocation() {
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startMonitoringSignificantLocationChanges()
+    }
+    
+    func callDelegate() {
+        locationManager.delegate = self
+    }
 
     func updateUI() {
         self.cityLabel.text = weatherManager.city
