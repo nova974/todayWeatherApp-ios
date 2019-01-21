@@ -63,7 +63,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             }
         } else {
             locationManager.requestWhenInUseAuthorization()
-            locationAuthCheck()
+//            locationAuthCheck()
         }
     }
     
