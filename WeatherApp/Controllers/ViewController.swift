@@ -18,8 +18,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var windLabel: UILabel!
     @IBOutlet weak var forecastLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
-    @IBOutlet weak var loadingView: UIView!
-    
+//    @IBOutlet weak var loadingView: UIView!
+
     
     // Constants
     let locationManager = CLLocationManager()
@@ -34,16 +34,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
         callDelegate()
         setupLocation()
-        locationAuthCheck()
+//        locationAuthCheck()
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        locationAuthCheck()
+//        locationAuthCheck()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        self.locationAuthCheck()
     }
     
     func locationAuthCheck() {
