@@ -12,14 +12,17 @@ import CoreLocation
 class ViewController: UIViewController, CLLocationManagerDelegate {
 
     // Outlets
-    @IBOutlet weak var tempLabel: UILabel!
-    @IBOutlet weak var cityLabel: UILabel!
-    @IBOutlet weak var icon: UIImageView!
-    @IBOutlet weak var windLabel: UILabel!
-    @IBOutlet weak var forecastLabel: UILabel!
-    @IBOutlet weak var humidityLabel: UILabel!
+//    @IBOutlet weak var tempLabel: UILabel!
+//    @IBOutlet weak var cityLabel: UILabel!
+//    @IBOutlet weak var icon: UIImageView!
+//    @IBOutlet weak var windLabel: UILabel!
+//    @IBOutlet weak var forecastLabel: UILabel!
+//    @IBOutlet weak var humidityLabel: UILabel!
 //    @IBOutlet weak var loadingView: UIView!
-
+    lazy var homeView: HomeView = {
+        let v = HomeView()
+        return v
+    }()
     
     // Constants
     let locationManager = CLLocationManager()
@@ -30,20 +33,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        weatherManager = WeatherManager()
-
-        callDelegate()
-        setupLocation()
-//        locationAuthCheck()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-//        locationAuthCheck()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        view = homeView
+//        weatherManager = WeatherManager()
+//
+//        callDelegate()
+//        setupLocation()
     }
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -63,7 +57,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             }
         } else {
             locationManager.requestWhenInUseAuthorization()
-//            locationAuthCheck()
         }
     }
     
@@ -78,12 +71,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     func updateUI() {
-        self.cityLabel.text = weatherManager.city
-        self.tempLabel.text = "\(Int(weatherManager.currentTemp))°"
-        self.icon.image = UIImage(named: weatherManager.icon)
-        self.windLabel.text = "\(weatherManager.wind) km/h"
-        self.forecastLabel.text = weatherManager.forecast
-        self.humidityLabel.text = "\(weatherManager.humidity)%"
+//        self.cityLabel.text = weatherManager.city
+//        self.tempLabel.text = "\(Int(weatherManager.currentTemp))°"
+//        self.icon.image = UIImage(named: weatherManager.icon)
+//        self.windLabel.text = "\(weatherManager.wind) km/h"
+//        self.forecastLabel.text = weatherManager.forecast
+//        self.humidityLabel.text = "\(weatherManager.humidity)%"
     }
 
 }
